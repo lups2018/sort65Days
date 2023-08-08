@@ -45,7 +45,7 @@ app.post('/login', async (req, res) => {
         if (process.env.EMAIL === loginData.username) {
             if (process.env.PASSWORD === loginData.password) {
                 req.session.loggedIn = true;
-                return res.redirect('/sort');
+                return res.redirect('/sort65Days');
             }
         }
         else {
@@ -96,9 +96,9 @@ app.get('/sortMultiple', async (req, res) => {
     }
 });
 
-app.get('/sortThreeMonth', async (req, res) => {
+app.get('/sort65Days', async (req, res) => {
     try {
-            return res.render('sort45Days.ejs');
+            return res.render('sort65Days.ejs');
     }
     catch (err) {
         console.log("err", err);

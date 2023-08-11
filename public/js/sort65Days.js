@@ -27,10 +27,10 @@ $(document).ready(function () {
     table.innerHTML += html;
 
 
-    $(".value-1").val(28)
-    $(".value-2").val(66)
-    $(".value-3").val(71)
-    $(".value-4").val(84)
+    $(".value-1").val(74)
+    $(".value-2").val("04")
+    $(".value-3").val(82)
+    $(".value-4").val(15)
     $(".value-5").val(29)
     $(".value-6").val("01")
     $(".value-7").val(91)
@@ -473,7 +473,7 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
                     { [firstDate]: previousValueReverse },
                     { [secondDate]: currentValueReverse },
                     { [thirdDate]: fourFiveReverse },
-                    { [fourthDate]: previousValueReverse }
+                    { [fourthDate]: thirdValueFirstReverse }
                 ])
                 break;
             case 8:
@@ -481,7 +481,7 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
                     { [firstDate]: previousValue },
                     { [secondDate]: currentValueReverse },
                     { [thirdDate]: fourFiveReverse },
-                    { [fourthDate]: previousValueReverse }
+                    { [fourthDate]: thirdValueFirstReverse }
                 ])
                 break;
             case 9:
@@ -537,7 +537,7 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
                     { [firstDate]: previousValueSecondaryReverse },
                     { [secondDate]: currentValueReverse },
                     { [thirdDate]: fourFiveReverse },
-                    { [fourthDate]: previousValueReverse }
+                    { [fourthDate]: thirdValueFirstReverse }
                 ])
                 break;
             case 16:
@@ -545,7 +545,7 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
                     { [firstDate]: previousValueSecondary },
                     { [secondDate]: currentValueReverse },
                     { [thirdDate]: fourFiveReverse },
-                    { [fourthDate]: previousValueReverse }
+                    { [fourthDate]: thirdValueFirstReverse }
                 ])
                 break;
             case 17:

@@ -331,7 +331,7 @@ const generateFieldData = () => {
     } else {
         let month = 'first';
         let monthFlag = 0;
-        for (let j = 1; j < dates.length; j++) {
+        for (let j = 1; j < dates.length - 1; j++) {
             if (parseInt(j) > 29) {
                 month = 'second';
                 if (parseInt(j) > 59) {
@@ -345,7 +345,7 @@ const generateFieldData = () => {
                 monthFlag = 2;
                 month = 'third';
             }
-            appendTables(dates[j], valueArray[j], dates[j - 1], valueArray[j - 1], month, dates[j + 1], dates[j + 2], monthFlag)
+            appendTables(dates[j], valueArray[j], dates[j - 1], valueArray[j - 1], month, dates[j + 1], dates[j + 2], monthFlag, valueArray[j+1] )
         }
         $(".searchTable").css('display', 'inline-block');
         $("#myTable").css('display', 'none');
@@ -365,14 +365,14 @@ function replaceLastDigitWithChar(number, char) {
     return parseInt(modifiedNumberStr);
 }
 
-const appendTables = (currentDate, currentValue, previousDate, previousValue, month, thirdDate, fourthDate, monthFlag) => {
+const appendTables = (currentDate, currentValue, previousDate, previousValue, month, thirdDate, fourthDate, monthFlag, thirdValue) => {
     const firstDate = previousDate;
     const secondDate = currentDate;
     if (thirdDate === undefined) {
         thirdDate = parseInt(currentDate) + 1;
     }
     if (fourthDate === undefined) {
-        fourthDate = thirdDate + 1
+        fourthDate = parseInt(thirdDate) + 1
     }
     let outputSet = [];
     previousValue = String(previousValue)
@@ -383,6 +383,13 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
     let previousValueSecondaryReverse = previousValueSecondary.split('').reverse().join('');
     let currentValueReverse = currentValue.split('').reverse().join('');
 
+    let thirdValueFirst = thirdValue.slice(0, -1) + "?";
+    let thirdValueFirstReverse = thirdValueFirst.split('').reverse().join('');
+
+    let thirdValueSecond = thirdValue.slice(1) + "?";
+    let thirdValueSecondReverse = thirdValueSecond.split('').reverse().join('');
+
+    console.log("third value console", thirdValue, thirdValueFirst, thirdValueFirstReverse, thirdValueSecond, thirdValueSecondReverse);
     let ffSum = parseInt(currentValue.toString()[0]);
     if (ffSum > 5) {
         ffSum = ffSum - 5;
@@ -416,7 +423,7 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
                     [
                         { [firstDate]: previousValue },
                         { [secondDate]: currentValue },
-                        { [thirdDate]: previousValue },
+                        { [thirdDate]: thirdValueFirst },
                         { [fourthDate]: fourFive }
                     ]
                 )
@@ -425,7 +432,7 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
                 outputSet.push([
                     { [firstDate]: previousValueReverse },
                     { [secondDate]: currentValue },
-                    { [thirdDate]: previousValue },
+                    { [thirdDate]: thirdValueFirst },
                     { [fourthDate]: fourFive }
                 ])
                 break;
@@ -434,7 +441,7 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
                     { [firstDate]: previousValue },
                     { [secondDate]: currentValue },
                     { [thirdDate]: fourFive },
-                    { [fourthDate]: previousValue }
+                    { [fourthDate]: thirdValueFirst }
                 ])
                 break;
             case 4:
@@ -442,14 +449,14 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
                     { [firstDate]: previousValueReverse },
                     { [secondDate]: currentValue },
                     { [thirdDate]: fourFive },
-                    { [fourthDate]: previousValue }
+                    { [fourthDate]: thirdValueFirst }
                 ])
                 break;
             case 5:
                 outputSet.push([
                     { [firstDate]: previousValueReverse },
                     { [secondDate]: currentValueReverse },
-                    { [thirdDate]: previousValueReverse },
+                    { [thirdDate]: thirdValueFirstReverse },
                     { [fourthDate]: fourFiveReverse }
                 ])
                 break;
@@ -457,7 +464,7 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
                 outputSet.push([
                     { [firstDate]: previousValue },
                     { [secondDate]: currentValueReverse },
-                    { [thirdDate]: previousValueReverse },
+                    { [thirdDate]: thirdValueFirstReverse },
                     { [fourthDate]: fourFiveReverse }
                 ])
                 break;
@@ -481,7 +488,7 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
                 outputSet.push([
                     { [firstDate]: previousValueSecondary },
                     { [secondDate]: currentValue },
-                    { [thirdDate]: previousValue },
+                    { [thirdDate]: thirdValueFirst },
                     { [fourthDate]: fourFive }
                 ])
                 break;
@@ -489,7 +496,7 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
                 outputSet.push([
                     { [firstDate]: previousValueSecondaryReverse },
                     { [secondDate]: currentValue },
-                    { [thirdDate]: previousValue },
+                    { [thirdDate]: thirdValueFirst },
                     { [fourthDate]: fourFive }
                 ])
                 break;
@@ -498,7 +505,7 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
                     { [firstDate]: previousValueSecondary },
                     { [secondDate]: currentValue },
                     { [thirdDate]: fourFive },
-                    { [fourthDate]: previousValue }
+                    { [fourthDate]: thirdValueFirst }
                 ])
                 break;
             case 12:
@@ -506,14 +513,14 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
                     { [firstDate]: previousValueSecondaryReverse },
                     { [secondDate]: currentValue },
                     { [thirdDate]: fourFive },
-                    { [fourthDate]: previousValue }
+                    { [fourthDate]: thirdValueFirst }
                 ])
                 break;
             case 13:
                 outputSet.push([
                     { [firstDate]: previousValueSecondaryReverse },
                     { [secondDate]: currentValueReverse },
-                    { [thirdDate]: previousValueReverse },
+                    { [thirdDate]: thirdValueFirstReverse },
                     { [fourthDate]: fourFiveReverse }
                 ])
                 break;
@@ -521,7 +528,7 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
                 outputSet.push([
                     { [firstDate]: previousValueSecondary },
                     { [secondDate]: currentValueReverse },
-                    { [thirdDate]: previousValueReverse },
+                    { [thirdDate]: thirdValueFirstReverse },
                     { [fourthDate]: fourFiveReverse }
                 ])
                 break;
@@ -545,7 +552,7 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
                 outputSet.push([
                     { [firstDate]: previousValue },
                     { [secondDate]: currentValue },
-                    { [thirdDate]: twoFive },
+                    { [thirdDate]: thirdValueSecondReverse },
                     { [fourthDate]: twoFiveReverse }
                 ])
                 break;
@@ -553,7 +560,7 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
                 outputSet.push([
                     { [firstDate]: previousValueReverse },
                     { [secondDate]: currentValue },
-                    { [thirdDate]: twoFive },
+                    { [thirdDate]: thirdValueSecondReverse },
                     { [fourthDate]: twoFiveReverse }
                 ])
                 break;
@@ -562,7 +569,7 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
                     { [firstDate]: previousValue },
                     { [secondDate]: currentValue },
                     { [thirdDate]: twoFiveReverse },
-                    { [fourthDate]: twoFive }
+                    { [fourthDate]: thirdValueSecondReverse }
                 ])
                 break;
             case 20:
@@ -570,14 +577,14 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
                     { [firstDate]: previousValueReverse },
                     { [secondDate]: currentValue },
                     { [thirdDate]: twoFiveReverse },
-                    { [fourthDate]: twoFive }
+                    { [fourthDate]: thirdValueSecondReverse }
                 ])
                 break;
             case 21:
                 outputSet.push([
                     { [firstDate]: previousValueReverse },
                     { [secondDate]: currentValueReverse },
-                    { [thirdDate]: twoFiveReverse },
+                    { [thirdDate]: thirdValueSecond },
                     { [fourthDate]: twoFive }
                 ])
                 break;
@@ -585,7 +592,7 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
                 outputSet.push([
                     { [firstDate]: previousValue },
                     { [secondDate]: currentValueReverse },
-                    { [thirdDate]: twoFiveReverse },
+                    { [thirdDate]: thirdValueSecond },
                     { [fourthDate]: twoFive }
                 ])
                 break;
@@ -594,7 +601,7 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
                     { [firstDate]: previousValueReverse },
                     { [secondDate]: currentValueReverse },
                     { [thirdDate]: twoFive },
-                    { [fourthDate]: twoFiveReverse }
+                    { [fourthDate]: thirdValueSecond }
                 ])
                 break;
             case 24:
@@ -602,14 +609,14 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
                     { [firstDate]: previousValue },
                     { [secondDate]: currentValueReverse },
                     { [thirdDate]: twoFive },
-                    { [fourthDate]: twoFiveReverse }
+                    { [fourthDate]: thirdValueSecond }
                 ])
                 break;
             case 25:
                 outputSet.push([
                     { [firstDate]: previousValueSecondaryReverse },
                     { [secondDate]: currentValue },
-                    { [thirdDate]: twoFive },
+                    { [thirdDate]: thirdValueSecondReverse },
                     { [fourthDate]: twoFiveReverse }
                 ])
                 break;
@@ -617,7 +624,7 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
                 outputSet.push([
                     { [firstDate]: previousValueSecondary },
                     { [secondDate]: currentValue },
-                    { [thirdDate]: twoFive },
+                    { [thirdDate]: thirdValueSecondReverse },
                     { [fourthDate]: twoFiveReverse }
                 ])
                 break;
@@ -626,7 +633,7 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
                     { [firstDate]: previousValueSecondaryReverse },
                     { [secondDate]: currentValue },
                     { [thirdDate]: twoFiveReverse },
-                    { [fourthDate]: twoFive }
+                    { [fourthDate]: thirdValueSecondReverse }
                 ])
                 break;
             case 28:
@@ -634,14 +641,14 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
                     { [firstDate]: previousValueSecondary },
                     { [secondDate]: currentValue },
                     { [thirdDate]: twoFiveReverse },
-                    { [fourthDate]: twoFive }
+                    { [fourthDate]: thirdValueSecondReverse }
                 ])
                 break;
             case 29:
                 outputSet.push([
                     { [firstDate]: previousValueSecondary },
                     { [secondDate]: currentValueReverse },
-                    { [thirdDate]: twoFiveReverse },
+                    { [thirdDate]: thirdValueSecond },
                     { [fourthDate]: twoFive }
                 ])
                 break;
@@ -649,7 +656,7 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
                 outputSet.push([
                     { [firstDate]: previousValueSecondaryReverse },
                     { [secondDate]: currentValueReverse },
-                    { [thirdDate]: twoFiveReverse },
+                    { [thirdDate]: thirdValueSecond },
                     { [fourthDate]: twoFive }
                 ])
                 break;
@@ -658,7 +665,7 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
                     { [firstDate]: previousValueSecondary },
                     { [secondDate]: currentValueReverse },
                     { [thirdDate]: twoFive },
-                    { [fourthDate]: twoFiveReverse }
+                    { [fourthDate]: thirdValueSecond }
                 ])
                 break;
             case 32:
@@ -666,7 +673,7 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
                     { [firstDate]: previousValueSecondaryReverse },
                     { [secondDate]: currentValueReverse },
                     { [thirdDate]: twoFive },
-                    { [fourthDate]: twoFiveReverse }
+                    { [fourthDate]: thirdValueSecond }
                 ])
                 break;
             default:

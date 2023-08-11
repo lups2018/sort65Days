@@ -736,7 +736,7 @@ document
                 console.log("chec", loop)
                 $("#outputList").empty();
                 const table = "table-" + loop;
-                const index = [$(".date-1").val(), $(".date-2").val(), $(".date-3").val(), $(".date-4").val()];
+                const index = [$(`.${table} .date-1`).val(), $(`.${table} .date-2`).val(), $(`.${table} .date-3`).val(), $(`.${table} .date-4`).val()];
                 const inputValues = [$(`.${table} .value-1`).val(), $(`.${table} .value-2`).val(), $(`.${table} .value-3`).val(), $(`.${table} .value-4`).val()];
 
                 let dataSetNew = {

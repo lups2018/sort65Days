@@ -5,19 +5,19 @@ $(document).ready(function () {
 
     for (var i = 1; i <= 65; i++) {
         let iter = parseInt(i);
-        if(iter > 30){
-            if(iter > 60){
+        if (iter > 30) {
+            if (iter > 60) {
                 iter = iter - 60
             }
-            else{
+            else {
                 iter = iter - flag
             }
         }
-       
+
         html += `
     <tr>
       <td>
-        <input class="common date-${i}" type="text" placeholder="Date ${iter}" value="${iter}" >
+        <input class="common date-${i}" type="text" placeholder="Date ${iter}" value="" >
         <input class="common value-${i}" type="text" placeholder="Value ${iter}" value="" >
       </td>
     </tr>
@@ -26,7 +26,7 @@ $(document).ready(function () {
 
     table.innerHTML += html;
 
-    
+
     $(".value-1").val(28)
     $(".value-2").val(66)
     $(".value-3").val(71)
@@ -93,79 +93,71 @@ $(document).ready(function () {
     $(".value-64").val(61)
     $(".value-65").val(86)
 
-    // $(".date-1").val(28)
-    // $(".date-2").val(66)
-    // $(".date-3").val(71)
-    // $(".date-4").val(84)
-    // $(".date-5").val(29)
-    // $(".date-6").val("01")
-    // $(".date-7").val(91)
-    // $(".date-8").val(95)
-    // $(".date-9").val(35)
-    // $(".date-10").val(17)
-    // $(".date-11").val(18)
-    // $(".date-12").val(32)
-    // $(".date-13").val(32)
-    // $(".date-14").val(59)
-    // $(".date-15").val(57)
-    // $(".date-16").val(50)
-    // $(".date-17").val(15)
-    // $(".date-18").val(57)
-    // $(".date-19").val(95)
-    // $(".date-20").val(34)
-    // $(".date-21").val(91)
-    // $(".date-22").val(35)
-    // $(".date-23").val(75)
-    // $(".date-24").val(32)
-    // $(".date-25").val(80)
-    // $(".date-26").val(60)
-    // $(".date-27").val(31)
-    // $(".date-28").val(83)
-    // $(".date-29").val(25)
-    // $(".date-30").val("01")
-    // $(".date-31").val(35)
-    // $(".date-32").val(28)
-    // $(".date-33").val(29)
-    // $(".date-34").val(94)
-    // $(".date-35").val(83)
-    // $(".date-36").val(57)
-    // $(".date-37").val(20)
-    // $(".date-38").val(18)
-    // $(".date-39").val(86)
-    // $(".date-40").val("02")
-    // $(".date-41").val(16)
-    // $(".date-42").val(95)
-    // $(".date-43").val(29)
-    // $(".date-44").val("02")
-    // $(".date-45").val(60)
-    // $(".date-46").val(54)
-    // $(".date-47").val(31)
-    // $(".date-48").val(45)
-    // $(".date-49").val("06")
-    // $(".date-50").val(53)
-    // $(".date-51").val(31)
-    // $(".date-52").val(59)
-    // $(".date-53").val(79)
-    // $(".date-54").val(70)
-    // $(".date-55").val(79)
-    // $(".date-56").val(29)
-    // $(".date-57").val(76)
-    // $(".date-58").val(76)
-    // $(".date-59").val(87)
-    // $(".date-60").val(94)
-    // $(".date-61").val("08")
-    // $(".date-62").val(11)
-    // $(".date-63").val(70)
-    // $(".date-64").val(61)
-    // $(".date-65").val(86)
-
-
-
-
-
-
-
-
+    $(".date-1").val(1)
+    $(".date-2").val(2)
+    $(".date-3").val(3)
+    $(".date-4").val(4)
+    $(".date-5").val(5)
+    $(".date-6").val(6)
+    $(".date-7").val(7)
+    $(".date-8").val(8)
+    $(".date-9").val(9)
+    $(".date-10").val(10)
+    $(".date-11").val(11)
+    $(".date-12").val(12)
+    $(".date-13").val(13)
+    $(".date-14").val(14)
+    $(".date-15").val(15)
+    $(".date-16").val(16)
+    $(".date-17").val(17)
+    $(".date-18").val(18)
+    $(".date-19").val(19)
+    $(".date-20").val(20)
+    $(".date-21").val(21)
+    $(".date-22").val(22)
+    $(".date-23").val(23)
+    $(".date-24").val(24)
+    $(".date-25").val(25)
+    $(".date-26").val(26)
+    $(".date-27").val(27)
+    $(".date-28").val(28)
+    $(".date-29").val(29)
+    $(".date-30").val(30)
+    $(".date-31").val(1)
+    $(".date-32").val(2)
+    $(".date-33").val(3)
+    $(".date-34").val(4)
+    $(".date-35").val(5)
+    $(".date-36").val(6)
+    $(".date-37").val(7)
+    $(".date-38").val(8)
+    $(".date-39").val(9)
+    $(".date-40").val(10)
+    $(".date-41").val(11)
+    $(".date-42").val(12)
+    $(".date-43").val(13)
+    $(".date-44").val(14)
+    $(".date-45").val(15)
+    $(".date-46").val(16)
+    $(".date-47").val(17)
+    $(".date-48").val(18)
+    $(".date-49").val(19)
+    $(".date-50").val(20)
+    $(".date-51").val(21)
+    $(".date-52").val(22)
+    $(".date-53").val(23)
+    $(".date-54").val(24)
+    $(".date-55").val(25)
+    $(".date-56").val(26)
+    $(".date-57").val(27)
+    $(".date-58").val(28)
+    $(".date-59").val(29)
+    $(".date-60").val(30)
+    $(".date-61").val(1)
+    $(".date-62").val(2)
+    $(".date-63").val(3)
+    $(".date-64").val(4)
+    $(".date-65").val(5)
 
 });
 function saveInputsToLocalStorage() {
@@ -226,15 +218,13 @@ document.getElementById('generateData').addEventListener('click', function () {
     //     date = parseInt(date) + 30
     // }
 
-    console.log("🚀 ~ file: sort65Days.js:136 ~ date:", date)
-
     let storageData = localStorage.getItem(`${date}_${selectedValue}`);
     storageData = JSON.parse(storageData)
-
-    $(".searchTable").css('display', 'none');
-    $("#reset").css('display', 'none');
-    console.log("🚀 ~ file: sort65Days.js:66 ~ storageData:", storageData, selectedValue)
-    var html = `
+    if (storageData) {
+        $(".searchTable").css('display', 'none');
+        $("#reset").css('display', 'none');
+        console.log("🚀 ~ file: sort65Days.js:66 ~ storageData:", storageData, selectedValue)
+        var html = `
     <b class="set-name">First Set</b>
     <table class="table-{tableClass}">
       <tr>
@@ -269,36 +259,41 @@ document.getElementById('generateData').addEventListener('click', function () {
     </div>
 
     `;
-    var $div = $('#yourDiv'); // Replace 'yourDiv' with the ID or class of your target div element
+        var $div = $('#yourDiv'); // Replace 'yourDiv' with the ID or class of your target div element
 
-    for (var i = 1; i <= 32; i++) {
-        let tableClass = i;
-        var $html = $(html.replace('{tableClass}', tableClass));
-        $($html[4]).addClass('result-' + i)
-        $($html[0]).text('Set ' + parseInt(i));
-        $div.append($html);
-    }
-
-    storageData.forEach((storage, index) => {
-        let flag = 0;
-        for (const key in storage) {
-            flag = flag + 1;
-            let value = storage[key];
-
-            $(`.table-${index + 1} .value-${flag}`).val(value)
-    
-            $(`.table-${index + 1} .date-${flag}`).val(key)
+        for (var i = 1; i <= 32; i++) {
+            let tableClass = i;
+            var $html = $(html.replace('{tableClass}', tableClass));
+            $($html[4]).addClass('result-' + i)
+            $($html[0]).text('Set ' + parseInt(i));
+            $div.append($html);
         }
-    });
-    $("#generateData").css("display", "none");
-    $("#backCompile").css("display", "none");
 
-    $("#uploadExcel").css("display", "inline-block");
-    $("#backSearchSet").css("display", "inline-block");
+        storageData.forEach((storage, index) => {
+            let flag = 0;
+            for (const key in storage) {
+                for (const j in storage[key]) {
 
-    $("#fileUpload").css("display", "inline-block");
+                    flag = flag + 1;
+                    let value = storage[key][j];
 
+                    $(`.table-${index + 1} .value-${flag}`).val(value)
 
+                    $(`.table-${index + 1} .date-${flag}`).val(j)
+                }
+            }
+        });
+        $("#generateData").css("display", "none");
+        $("#backCompile").css("display", "none");
+
+        $("#uploadExcel").css("display", "inline-block");
+        $("#backSearchSet").css("display", "inline-block");
+
+        $("#fileUpload").css("display", "inline-block");
+    }
+    else {
+        alert("Please enter valid date for the selected month: " + selectedValue);
+    }
 });
 
 document.getElementById('appendTables').addEventListener('click', function () {
@@ -321,26 +316,42 @@ const generateFieldData = () => {
 
         let value = $(`.${className}`).val();
         let date = $(`.date-${i}`).val();
-        valueArray[i] = value
-        dates[i] = date;
+        if (value) {
+            valueArray[i] = value
+        }
+        if (date) {
+            dates[i] = date;
+        }
     }
     valueArray.shift();
     dates.shift();
-    let month = 'first';
 
-    for (let j = 1; j < 65; j++) {
-        if (parseInt(j) > 29) {
-            month = 'second';
-            if (parseInt(j) > 59) {
+    if (dates.length < 61 || valueArray.length < 61) {
+        alert('Please enter required dates and values')
+    } else {
+        let month = 'first';
+        let monthFlag = 0;
+        for (let j = 1; j < dates.length; j++) {
+            if (parseInt(j) > 29) {
+                month = 'second';
+                if (parseInt(j) > 59) {
+                    month = 'third';
+                }
+            }
+            if (monthFlag === 0 && dates[j] === '1') {
+                monthFlag = 1;
+                month = 'second';
+            } else if (monthFlag === 1 && dates[j] === '1') {
+                monthFlag = 2;
                 month = 'third';
             }
+            appendTables(dates[j], valueArray[j], dates[j - 1], valueArray[j - 1], month, dates[j + 1], dates[j + 2], monthFlag)
         }
-        appendTables(dates[j], valueArray[j], dates[j - 1], valueArray[j - 1], month)
+        $(".searchTable").css('display', 'inline-block');
+        $("#myTable").css('display', 'none');
+        $("#appendTables").css('display', 'none');
+        $("#reset").css('display', 'inline-block');
     }
-    $(".searchTable").css('display', 'inline-block');
-    $("#myTable").css('display', 'none');
-    $("#appendTables").css('display', 'none');
-    $("#reset").css('display', 'inline-block');
 }
 
 function replaceLastDigitWithChar(number, char) {
@@ -354,12 +365,16 @@ function replaceLastDigitWithChar(number, char) {
     return parseInt(modifiedNumberStr);
 }
 
-const appendTables = (currentDate, currentValue, previousDate, previousValue, month) => {
+const appendTables = (currentDate, currentValue, previousDate, previousValue, month, thirdDate, fourthDate, monthFlag) => {
     const firstDate = previousDate;
     const secondDate = currentDate;
-    const thirdDate = parseInt(currentDate) + 1;
-    const fourthDate = thirdDate + 1;
-    const outputSet = [];
+    if (thirdDate === undefined) {
+        thirdDate = parseInt(currentDate) + 1;
+    }
+    if (fourthDate === undefined) {
+        fourthDate = thirdDate + 1
+    }
+    let outputSet = [];
     previousValue = String(previousValue)
     let previousValueSecondary = previousValue.slice(1);
     previousValueSecondary = "?" + previousValueSecondary;
@@ -397,265 +412,268 @@ const appendTables = (currentDate, currentValue, previousDate, previousValue, mo
     for (let i = 1; i <= 32; i++) {
         switch (i) {
             case 1:
-                outputSet.push({
-                    [firstDate]: previousValue,
-                    [secondDate]: currentValue,
-                    [thirdDate]: previousValue,
-                    [fourthDate]: fourFive
-                })
+                outputSet.push(
+                    [
+                        { [firstDate]: previousValue },
+                        { [secondDate]: currentValue },
+                        { [thirdDate]: previousValue },
+                        { [fourthDate]: fourFive }
+                    ]
+                )
                 break;
             case 2:
-                outputSet.push({
-                    [firstDate]: previousValueReverse,
-                    [secondDate]: currentValue,
-                    [thirdDate]: previousValue,
-                    [fourthDate]: fourFive
-                })
+                outputSet.push([
+                    { [firstDate]: previousValueReverse },
+                    { [secondDate]: currentValue },
+                    { [thirdDate]: previousValue },
+                    { [fourthDate]: fourFive }
+                ])
                 break;
             case 3:
-                outputSet.push({
-                    [firstDate]: previousValue,
-                    [secondDate]: currentValue,
-                    [thirdDate]: fourFive,
-                    [fourthDate]: previousValue
-                })
+                outputSet.push([
+                    { [firstDate]: previousValue },
+                    { [secondDate]: currentValue },
+                    { [thirdDate]: fourFive },
+                    { [fourthDate]: previousValue }
+                ])
                 break;
             case 4:
-                outputSet.push({
-                    [firstDate]: previousValueReverse,
-                    [secondDate]: currentValue,
-                    [thirdDate]: fourFive,
-                    [fourthDate]: previousValue
-                })
+                outputSet.push([
+                    { [firstDate]: previousValueReverse },
+                    { [secondDate]: currentValue },
+                    { [thirdDate]: fourFive },
+                    { [fourthDate]: previousValue }
+                ])
                 break;
             case 5:
-                outputSet.push({
-                    [firstDate]: previousValueReverse,
-                    [secondDate]: currentValueReverse,
-                    [thirdDate]: previousValueReverse,
-                    [fourthDate]: fourFiveReverse
-                })
+                outputSet.push([
+                    { [firstDate]: previousValueReverse },
+                    { [secondDate]: currentValueReverse },
+                    { [thirdDate]: previousValueReverse },
+                    { [fourthDate]: fourFiveReverse }
+                ])
                 break;
             case 6:
-                outputSet.push({
-                    [firstDate]: previousValue,
-                    [secondDate]: currentValueReverse,
-                    [thirdDate]: previousValueReverse,
-                    [fourthDate]: fourFiveReverse
-                })
+                outputSet.push([
+                    { [firstDate]: previousValue },
+                    { [secondDate]: currentValueReverse },
+                    { [thirdDate]: previousValueReverse },
+                    { [fourthDate]: fourFiveReverse }
+                ])
                 break;
             case 7:
-                outputSet.push({
-                    [firstDate]: previousValueReverse,
-                    [secondDate]: currentValueReverse,
-                    [thirdDate]: fourFiveReverse,
-                    [fourthDate]: previousValueReverse
-                })
+                outputSet.push([
+                    { [firstDate]: previousValueReverse },
+                    { [secondDate]: currentValueReverse },
+                    { [thirdDate]: fourFiveReverse },
+                    { [fourthDate]: previousValueReverse }
+                ])
                 break;
             case 8:
-                outputSet.push({
-                    [firstDate]: previousValue,
-                    [secondDate]: currentValueReverse,
-                    [thirdDate]: fourFiveReverse,
-                    [fourthDate]: previousValueReverse
-                })
+                outputSet.push([
+                    { [firstDate]: previousValue },
+                    { [secondDate]: currentValueReverse },
+                    { [thirdDate]: fourFiveReverse },
+                    { [fourthDate]: previousValueReverse }
+                ])
                 break;
             case 9:
-                outputSet.push({
-                    [firstDate]: previousValueSecondary,
-                    [secondDate]: currentValue,
-                    [thirdDate]: previousValue,
-                    [fourthDate]: fourFive
-                })
+                outputSet.push([
+                    { [firstDate]: previousValueSecondary },
+                    { [secondDate]: currentValue },
+                    { [thirdDate]: previousValue },
+                    { [fourthDate]: fourFive }
+                ])
                 break;
             case 10:
-                outputSet.push({
-                    [firstDate]: previousValueSecondaryReverse,
-                    [secondDate]: currentValue,
-                    [thirdDate]: previousValue,
-                    [fourthDate]: fourFive
-                })
+                outputSet.push([
+                    { [firstDate]: previousValueSecondaryReverse },
+                    { [secondDate]: currentValue },
+                    { [thirdDate]: previousValue },
+                    { [fourthDate]: fourFive }
+                ])
                 break;
             case 11:
-                outputSet.push({
-                    [firstDate]: previousValueSecondary,
-                    [secondDate]: currentValue,
-                    [thirdDate]: fourFive,
-                    [fourthDate]: previousValue
-                })
+                outputSet.push([
+                    { [firstDate]: previousValueSecondary },
+                    { [secondDate]: currentValue },
+                    { [thirdDate]: fourFive },
+                    { [fourthDate]: previousValue }
+                ])
                 break;
             case 12:
-                outputSet.push({
-                    [firstDate]: previousValueSecondaryReverse,
-                    [secondDate]: currentValue,
-                    [thirdDate]: fourFive,
-                    [fourthDate]: previousValue
-                })
+                outputSet.push([
+                    { [firstDate]: previousValueSecondaryReverse },
+                    { [secondDate]: currentValue },
+                    { [thirdDate]: fourFive },
+                    { [fourthDate]: previousValue }
+                ])
                 break;
             case 13:
-                outputSet.push({
-                    [firstDate]: previousValueSecondaryReverse,
-                    [secondDate]: currentValueReverse,
-                    [thirdDate]: previousValueReverse,
-                    [fourthDate]: fourFiveReverse
-                })
+                outputSet.push([
+                    { [firstDate]: previousValueSecondaryReverse },
+                    { [secondDate]: currentValueReverse },
+                    { [thirdDate]: previousValueReverse },
+                    { [fourthDate]: fourFiveReverse }
+                ])
                 break;
             case 14:
-                outputSet.push({
-                    [firstDate]: previousValueSecondary,
-                    [secondDate]: currentValueReverse,
-                    [thirdDate]: previousValueReverse,
-                    [fourthDate]: fourFiveReverse
-                })
+                outputSet.push([
+                    { [firstDate]: previousValueSecondary },
+                    { [secondDate]: currentValueReverse },
+                    { [thirdDate]: previousValueReverse },
+                    { [fourthDate]: fourFiveReverse }
+                ])
                 break;
             case 15:
-                outputSet.push({
-                    [firstDate]: previousValueSecondaryReverse,
-                    [secondDate]: currentValueReverse,
-                    [thirdDate]: fourFiveReverse,
-                    [fourthDate]: previousValueReverse
-                })
+                outputSet.push([
+                    { [firstDate]: previousValueSecondaryReverse },
+                    { [secondDate]: currentValueReverse },
+                    { [thirdDate]: fourFiveReverse },
+                    { [fourthDate]: previousValueReverse }
+                ])
                 break;
             case 16:
-                outputSet.push({
-                    [firstDate]: previousValueSecondary,
-                    [secondDate]: currentValueReverse,
-                    [thirdDate]: fourFiveReverse,
-                    [fourthDate]: previousValueReverse
-                })
+                outputSet.push([
+                    { [firstDate]: previousValueSecondary },
+                    { [secondDate]: currentValueReverse },
+                    { [thirdDate]: fourFiveReverse },
+                    { [fourthDate]: previousValueReverse }
+                ])
                 break;
             case 17:
-                outputSet.push({
-                    [firstDate]: previousValue,
-                    [secondDate]: currentValue,
-                    [thirdDate]: twoFive,
-                    [fourthDate]: twoFiveReverse
-                })
+                outputSet.push([
+                    { [firstDate]: previousValue },
+                    { [secondDate]: currentValue },
+                    { [thirdDate]: twoFive },
+                    { [fourthDate]: twoFiveReverse }
+                ])
                 break;
             case 18:
-                outputSet.push({
-                    [firstDate]: previousValueReverse,
-                    [secondDate]: currentValue,
-                    [thirdDate]: twoFive,
-                    [fourthDate]: twoFiveReverse
-                })
+                outputSet.push([
+                    { [firstDate]: previousValueReverse },
+                    { [secondDate]: currentValue },
+                    { [thirdDate]: twoFive },
+                    { [fourthDate]: twoFiveReverse }
+                ])
                 break;
             case 19:
-                outputSet.push({
-                    [firstDate]: previousValue,
-                    [secondDate]: currentValue,
-                    [thirdDate]: twoFiveReverse,
-                    [fourthDate]: twoFive
-                })
+                outputSet.push([
+                    { [firstDate]: previousValue },
+                    { [secondDate]: currentValue },
+                    { [thirdDate]: twoFiveReverse },
+                    { [fourthDate]: twoFive }
+                ])
                 break;
             case 20:
-                outputSet.push({
-                    [firstDate]: previousValueReverse,
-                    [secondDate]: currentValue,
-                    [thirdDate]: twoFiveReverse,
-                    [fourthDate]: twoFive
-                })
+                outputSet.push([
+                    { [firstDate]: previousValueReverse },
+                    { [secondDate]: currentValue },
+                    { [thirdDate]: twoFiveReverse },
+                    { [fourthDate]: twoFive }
+                ])
                 break;
             case 21:
-                outputSet.push({
-                    [firstDate]: previousValueReverse,
-                    [secondDate]: currentValueReverse,
-                    [thirdDate]: twoFiveReverse,
-                    [fourthDate]: twoFive
-                })
+                outputSet.push([
+                    { [firstDate]: previousValueReverse },
+                    { [secondDate]: currentValueReverse },
+                    { [thirdDate]: twoFiveReverse },
+                    { [fourthDate]: twoFive }
+                ])
                 break;
             case 22:
-                outputSet.push({
-                    [firstDate]: previousValue,
-                    [secondDate]: currentValueReverse,
-                    [thirdDate]: twoFiveReverse,
-                    [fourthDate]: twoFive
-                })
+                outputSet.push([
+                    { [firstDate]: previousValue },
+                    { [secondDate]: currentValueReverse },
+                    { [thirdDate]: twoFiveReverse },
+                    { [fourthDate]: twoFive }
+                ])
                 break;
             case 23:
-                outputSet.push({
-                    [firstDate]: previousValueReverse,
-                    [secondDate]: currentValueReverse,
-                    [thirdDate]: twoFive,
-                    [fourthDate]: twoFiveReverse
-                })
+                outputSet.push([
+                    { [firstDate]: previousValueReverse },
+                    { [secondDate]: currentValueReverse },
+                    { [thirdDate]: twoFive },
+                    { [fourthDate]: twoFiveReverse }
+                ])
                 break;
             case 24:
-                outputSet.push({
-                    [firstDate]: previousValue,
-                    [secondDate]: currentValueReverse,
-                    [thirdDate]: twoFive,
-                    [fourthDate]: twoFiveReverse
-                })
+                outputSet.push([
+                    { [firstDate]: previousValue },
+                    { [secondDate]: currentValueReverse },
+                    { [thirdDate]: twoFive },
+                    { [fourthDate]: twoFiveReverse }
+                ])
                 break;
             case 25:
-                outputSet.push({
-                    [firstDate]: previousValueSecondaryReverse,
-                    [secondDate]: currentValue,
-                    [thirdDate]: twoFive,
-                    [fourthDate]: twoFiveReverse
-                })
+                outputSet.push([
+                    { [firstDate]: previousValueSecondaryReverse },
+                    { [secondDate]: currentValue },
+                    { [thirdDate]: twoFive },
+                    { [fourthDate]: twoFiveReverse }
+                ])
                 break;
             case 26:
-                outputSet.push({
-                    [firstDate]: previousValueSecondary,
-                    [secondDate]: currentValue,
-                    [thirdDate]: twoFive,
-                    [fourthDate]: twoFiveReverse
-                })
+                outputSet.push([
+                    { [firstDate]: previousValueSecondary },
+                    { [secondDate]: currentValue },
+                    { [thirdDate]: twoFive },
+                    { [fourthDate]: twoFiveReverse }
+                ])
                 break;
             case 27:
-                outputSet.push({
-                    [firstDate]: previousValueSecondaryReverse,
-                    [secondDate]: currentValue,
-                    [thirdDate]: twoFiveReverse,
-                    [fourthDate]: twoFive
-                })
+                outputSet.push([
+                    { [firstDate]: previousValueSecondaryReverse },
+                    { [secondDate]: currentValue },
+                    { [thirdDate]: twoFiveReverse },
+                    { [fourthDate]: twoFive }
+                ])
                 break;
             case 28:
-                outputSet.push({
-                    [firstDate]: previousValueSecondary,
-                    [secondDate]: currentValue,
-                    [thirdDate]: twoFiveReverse,
-                    [fourthDate]: twoFive
-                })
+                outputSet.push([
+                    { [firstDate]: previousValueSecondary },
+                    { [secondDate]: currentValue },
+                    { [thirdDate]: twoFiveReverse },
+                    { [fourthDate]: twoFive }
+                ])
                 break;
             case 29:
-                outputSet.push({
-                    [firstDate]: previousValueSecondary,
-                    [secondDate]: currentValueReverse,
-                    [thirdDate]: twoFiveReverse,
-                    [fourthDate]: twoFive
-                })
+                outputSet.push([
+                    { [firstDate]: previousValueSecondary },
+                    { [secondDate]: currentValueReverse },
+                    { [thirdDate]: twoFiveReverse },
+                    { [fourthDate]: twoFive }
+                ])
                 break;
             case 30:
-                outputSet.push({
-                    [firstDate]: previousValueSecondaryReverse,
-                    [secondDate]: currentValueReverse,
-                    [thirdDate]: twoFiveReverse,
-                    [fourthDate]: twoFive
-                })
+                outputSet.push([
+                    { [firstDate]: previousValueSecondaryReverse },
+                    { [secondDate]: currentValueReverse },
+                    { [thirdDate]: twoFiveReverse },
+                    { [fourthDate]: twoFive }
+                ])
                 break;
             case 31:
-                outputSet.push({
-                    [firstDate]: previousValueSecondary,
-                    [secondDate]: currentValueReverse,
-                    [thirdDate]: twoFive,
-                    [fourthDate]: twoFiveReverse
-                })
+                outputSet.push([
+                    { [firstDate]: previousValueSecondary },
+                    { [secondDate]: currentValueReverse },
+                    { [thirdDate]: twoFive },
+                    { [fourthDate]: twoFiveReverse }
+                ])
                 break;
             case 32:
-                outputSet.push({
-                    [firstDate]: previousValueSecondaryReverse,
-                    [secondDate]: currentValueReverse,
-                    [thirdDate]: twoFive,
-                    [fourthDate]: twoFiveReverse
-                })
+                outputSet.push([
+                    { [firstDate]: previousValueSecondaryReverse },
+                    { [secondDate]: currentValueReverse },
+                    { [thirdDate]: twoFive },
+                    { [fourthDate]: twoFiveReverse }
+                ])
                 break;
             default:
                 break;
         }
     }
+    console.log("🚀 ~ file: sort65Days.js:672 ~ appendTables ~ outputSet:", monthFlag)
 
     localStorage.setItem(`${currentDate}_${month}`, JSON.stringify(outputSet));
     $("#generateData").css("display", "inline-block");
@@ -703,7 +721,7 @@ document
             $("#reset").css('display', 'none');
             $("#backSearchSet").css('display', 'none');
 
-            
+
             document.getElementById('loader').style.display = 'inline-block';
             $(".year").html("");
             $(".outputList").html("");
